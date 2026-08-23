@@ -1,0 +1,879 @@
+/* ==========================================================================
+   Nisha Acupuncture & Hijama Clinic - Interactive Subsystems CSS
+   Meridian Explorer, Sunnah Calendar & Multi-Step Booking Wizard
+   ========================================================================== */
+
+/* 1. Meridian Explorer */
+.meridian-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.meridian-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.view-toggle-pills {
+  display: flex;
+  background: var(--bg-surface-elevated);
+  padding: 0.35rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+  gap: 0.35rem;
+}
+
+.pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-full);
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pill-btn.active {
+  background: linear-gradient(135deg, #1e6b52, #0f3d2e);
+  color: #ffffff;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.meridian-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--color-emerald);
+  background: rgba(16, 185, 129, 0.1);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.live-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-emerald);
+  animation: pulseGlow 1.8s infinite;
+}
+
+.meridian-workspace {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.meridian-canvas-box {
+  background: var(--bg-glass-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.body-canvas-legend {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.legend-item .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.legend-item .dot.acu { background: var(--color-accent-gold); }
+.legend-item .dot.hijama { background: #ef4444; }
+
+.interactive-svg-wrap {
+  width: 100%;
+  max-width: 320px;
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.human-body-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.4));
+}
+
+.hotspots-group.hidden {
+  display: none;
+}
+
+.hotspots-group.visible {
+  display: block;
+}
+
+/* Hotspot Nodes */
+.hotspot-node {
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.hotspot-node:hover {
+  transform: scale(1.2);
+}
+
+.hotspot-pulse {
+  fill: rgba(212, 175, 55, 0.25);
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+.hotspot-core {
+  fill: var(--color-accent-gold);
+  stroke: #ffffff;
+  stroke-width: 1.5;
+  transition: all var(--transition-fast);
+}
+
+.hotspot-core.highlight {
+  fill: #ef4444;
+}
+
+.hotspot-label {
+  fill: #071f17;
+  font-size: 8px;
+  font-weight: 800;
+  font-family: var(--font-body);
+  pointer-events: none;
+}
+
+.hotspot-node.active-selected .hotspot-core {
+  fill: var(--color-emerald);
+  transform: scale(1.3);
+  stroke: var(--color-accent-gold);
+  stroke-width: 2;
+}
+
+.interactive-guide-tip {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-align: center;
+}
+
+/* Meridian Details Panel */
+.meridian-details-card {
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.zone-details-header {
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 1rem;
+}
+
+.zone-badge {
+  font-size: 0.8rem;
+  color: var(--color-accent-gold);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.zone-title {
+  font-size: 1.8rem;
+}
+
+.zone-symptoms-list h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.symptom-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.symptom-chip {
+  font-size: 0.82rem;
+  padding: 0.35rem 0.85rem;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  color: var(--text-main);
+}
+
+.zone-meridian-points-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.point-box {
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+}
+
+.point-box-title {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  margin-bottom: 0.6rem;
+}
+
+.point-box-title .indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.point-box-title .indicator.acu { background: var(--color-accent-gold); }
+.point-box-title .indicator.hijama { background: #ef4444; }
+
+.point-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.point-chips code {
+  font-size: 0.78rem;
+  padding: 0.2rem 0.5rem;
+  background: var(--bg-surface);
+  border-radius: 4px;
+  color: var(--color-accent-gold);
+  border: 1px solid var(--border-subtle);
+}
+
+.zone-recovery-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg-surface-elevated);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  text-align: center;
+}
+
+.metric-val {
+  font-size: 1.4rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+}
+
+.metric-lbl {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* 2. Sunnah Calendar Card */
+.sunnah-calendar-card {
+  padding: 2.75rem 2.25rem;
+}
+
+.sunnah-top-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.crescent-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: var(--color-accent-gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.sunnah-title {
+  font-size: 1.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.sunnah-subtitle {
+  max-width: 600px;
+  font-size: 0.95rem;
+}
+
+.banner-countdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.countdown-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 2px solid var(--color-accent-gold);
+  box-shadow: var(--shadow-gold);
+  background: var(--bg-surface-elevated);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.countdown-number {
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+  color: var(--color-accent-gold);
+  line-height: 1;
+}
+
+.countdown-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.next-target-text {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-emerald);
+}
+
+.sunnah-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.sunnah-day-box {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.sunnah-day-box:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent-gold);
+}
+
+.sunnah-day-box.prime-day {
+  border-color: var(--color-accent-gold);
+  box-shadow: var(--shadow-gold);
+}
+
+.prime-tag {
+  position: absolute;
+  top: -10px;
+  background: linear-gradient(135deg, #d4af37, #b89726);
+  color: #071f17;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.2rem 0.75rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.hijri-day-pill {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-accent-gold);
+  margin-bottom: 0.5rem;
+}
+
+.sunnah-greg-date {
+  font-size: 1.4rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+  margin-bottom: 0.25rem;
+}
+
+.sunnah-day-name {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.sunnah-benefits-mini {
+  font-size: 0.8rem;
+  color: var(--color-emerald);
+  margin-bottom: 1.25rem;
+}
+
+.sunnah-fasting-guide {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.85rem;
+}
+
+.guide-col {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.guide-col strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--color-accent-gold);
+  white-space: nowrap;
+}
+
+/* 3. Booking Wizard Modal */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-dialog {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 720px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  animation: modalPop 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalPop {
+  from { transform: scale(0.92) translateY(20px); opacity: 0; }
+  to { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.modal-header {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-header h3 {
+  font-size: 1.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.modal-close-icon {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.modal-close-icon:hover {
+  color: var(--color-danger);
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+/* Wizard Step Progression */
+.step-progress-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.step-item {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.step-item.active {
+  color: var(--color-accent-gold);
+  border-bottom: 2px solid var(--color-accent-gold);
+  padding-bottom: 0.25rem;
+}
+
+.step-item.completed {
+  color: var(--color-emerald);
+}
+
+.step-heading {
+  font-size: 1.4rem;
+  margin-bottom: 0.35rem;
+}
+
+.step-subheading {
+  font-size: 0.88rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Services Radio Cards */
+.services-radio-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+.service-radio-card {
+  position: relative;
+  cursor: pointer;
+  display: block;
+}
+
+.service-radio-card input {
+  position: absolute;
+  opacity: 0;
+}
+
+.service-radio-card .card-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.1rem 1.25rem;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface-elevated);
+  border: 1.5px solid var(--border-subtle);
+  transition: all var(--transition-fast);
+}
+
+.service-radio-card:hover .card-inner {
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+.service-radio-card.selected .card-inner {
+  border-color: var(--color-accent-gold);
+  background: rgba(30, 107, 82, 0.2);
+  box-shadow: var(--shadow-sm);
+}
+
+.card-icon-area {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(212, 175, 55, 0.15);
+  color: var(--color-accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.card-details h4 {
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+}
+
+.service-desc {
+  font-size: 0.82rem;
+  margin-bottom: 0.5rem;
+}
+
+.meta-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.8rem;
+}
+
+.price-tag {
+  font-weight: 700;
+  color: var(--color-accent-gold);
+}
+
+/* Slot Selection */
+.slot-selection-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.doctor-badge-info {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1rem;
+  background: var(--bg-surface-elevated);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+}
+
+.doc-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-primary-light);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.doc-meta strong {
+  display: block;
+  font-size: 0.9rem;
+}
+
+.doc-meta small {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+/* Patient Form */
+.patient-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.full-col {
+  grid-column: span 2;
+}
+
+.gender-radio-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.35rem;
+}
+
+.gender-pill {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.wizard-footer-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* Digital Pass Confirmation Step */
+.confirmation-badge-header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.conf-icon-glow {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--color-emerald);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 1rem auto;
+  box-shadow: var(--shadow-emerald);
+}
+
+.digital-pass-card {
+  background: linear-gradient(135deg, #102820 0%, #0a1914 100%);
+  border: 2px dashed var(--color-accent-gold);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.pass-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  padding-bottom: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.pass-brand h4 {
+  font-size: 1.15rem;
+  color: var(--color-accent-gold);
+}
+
+.pass-brand small {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.pass-ref {
+  text-align: right;
+}
+
+.ref-tag {
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--color-emerald);
+}
+
+.pass-ref strong {
+  font-size: 1.2rem;
+  font-family: monospace;
+  color: #ffffff;
+}
+
+.pass-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.pass-row.highlight-box {
+  background: rgba(212, 175, 55, 0.08);
+  padding: 0.85rem;
+  border-radius: var(--radius-sm);
+}
+
+.pass-item .label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.pass-item .val {
+  font-size: 0.95rem;
+}
+
+.pass-notes {
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.pass-footer {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(212, 175, 55, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.confirmation-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.secondary-pass-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.secondary-pass-actions .btn {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .meridian-workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .patient-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full-col {
+    grid-column: span 1;
+  }
+
+  .sunnah-fasting-guide {
+    grid-template-columns: 1fr;
+  }
+}
