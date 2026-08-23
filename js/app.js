@@ -3,8 +3,10 @@
  * Madurai, Tamil Nadu
  */
 
+// Reset default strictly to clean high-contrast light mode
 window.currentLang = localStorage.getItem('nisha_clinic_lang') || 'en';
-window.currentTheme = localStorage.getItem('nisha_clinic_theme') || 'light';
+window.currentTheme = 'light';
+localStorage.setItem('nisha_clinic_theme', 'light');
 
 document.addEventListener('DOMContentLoaded', () => {
   App.init();
@@ -12,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const App = {
   init() {
-    this.applyTheme(window.currentTheme);
+    this.applyTheme('light');
     this.applyLanguage(window.currentLang);
     this.renderTreatmentsGrid();
     this.renderDoctorSection();
@@ -39,7 +41,7 @@ const App = {
     
     const themeBtn = document.getElementById('theme-toggle-btn');
     if (themeBtn) {
-      themeBtn.innerHTML = theme === 'dark' ? '<i class="fa-solid fa-sun text-gold"></i>' : '<i class="fa-solid fa-moon text-primary"></i>';
+      themeBtn.innerHTML = theme === 'dark' ? '<i class="fa-solid fa-sun" style="color: #b45309;"></i>' : '<i class="fa-solid fa-moon" style="color: #065f46;"></i>';
     }
   },
 
