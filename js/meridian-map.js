@@ -26,15 +26,15 @@ class MeridianExplorer {
         <div class="meridian-header-bar">
           <div class="view-toggle-pills">
             <button class="pill-btn ${this.activeView === 'back' ? 'active' : ''}" data-view="back">
-              <i class="fa-solid fa-street-view"></i> <span>${isTa ? 'பின்புற பார்வை (Back View)' : 'Posterior / Back View'}</span>
+              <i class="fa-solid fa-street-view"></i> <span>${isTa ? 'பின்புறம் (Back)' : 'Posterior (Back)'}</span>
             </button>
             <button class="pill-btn ${this.activeView === 'front' ? 'active' : ''}" data-view="front">
-              <i class="fa-solid fa-person"></i> <span>${isTa ? 'முன்புற பார்வை (Front View)' : 'Anterior / Front View'}</span>
+              <i class="fa-solid fa-person"></i> <span>${isTa ? 'முன்புறம் (Front)' : 'Anterior (Front)'}</span>
             </button>
           </div>
           <div class="meridian-badge">
             <span class="live-pulse-dot"></span>
-            <span>${isTa ? 'நேரலை உடல் புள்ளி வரைபடம்' : 'Interactive Anatomical Meridian Map'}</span>
+            <span>${isTa ? 'நேரலை உடல் வரைபடம்' : 'Interactive Meridian Map'}</span>
           </div>
         </div>
 
@@ -146,7 +146,7 @@ class MeridianExplorer {
             
             <div class="interactive-guide-tip">
               <i class="fa-solid fa-wand-magic-sparkles text-primary"></i> 
-              <span>${isTa ? 'உடலில் உள்ள எண்களை தொட்டு வலி நிவாரண புள்ளிகளை காண்க' : 'Click numbered points on the body to reveal therapeutic acupoints & recovery stats'}</span>
+              <span>${isTa ? 'உடலில் உள்ள எண்களை தொட்டு விபரங்களை காண்க' : 'Tap points on the body to reveal therapeutic acupoints & recovery stats'}</span>
             </div>
           </div>
 
@@ -200,6 +200,8 @@ class MeridianExplorer {
     const panel = document.getElementById('meridian-details-panel');
     if (!panel) return;
 
+    const shortTitle = zoneData.bodyPart.split('(')[0].trim();
+
     panel.innerHTML = `
       <div class="zone-details-header">
         <span class="zone-badge"><i class="fa-solid fa-heart-pulse"></i> ${isTa ? 'தேர்ந்தெடுக்கப்பட்ட பகுதி' : 'Selected Pain Zone'}</span>
@@ -227,7 +229,7 @@ class MeridianExplorer {
         <div class="point-box hijama-box">
           <div class="point-box-title">
             <span class="indicator hijama"></span>
-            <strong>${isTa ? 'ஹிஜாமா கப்பிங் புள்ளிகள்' : 'Target Hijama Cupping Points'}</strong>
+            <strong>${isTa ? 'ஹிஜாமா கப்பிங் புள்ளிகள்' : 'Hijama Cupping Points'}</strong>
           </div>
           <div class="point-chips">
             ${zoneData.hijamaPoints.map(p => `<code>${p}</code>`).join('')}
@@ -249,7 +251,7 @@ class MeridianExplorer {
       <div class="zone-action-bar">
         <button class="btn btn-primary btn-block trigger-book-btn" data-service="${zoneData.recommendedService}" data-symptom="${zoneData.symptoms[0]}">
           <i class="fa-solid fa-calendar-plus"></i>
-          <span>${isTa ? 'இந்த பிரச்சனைக்கு முன்பதிவு செய்க' : 'Book Consultation for ' + zoneData.bodyPart.split('(')[0]}</span>
+          <span>${isTa ? 'இந்த பிரச்சனைக்கு முன்பதிவு செய்க' : 'Book Consultation for ' + shortTitle}</span>
         </button>
       </div>
     `;

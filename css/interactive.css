@@ -1,13 +1,17 @@
 /* ==========================================================================
-   Nisha Acupuncture & Hijama Clinic - Interactive Subsystems (Mobile Precision)
+   Nisha Acupuncture & Hijama Clinic - Interactive Subsystems
+   100% Flawless Mobile & iPhone Viewport Protection
    Meridian Explorer, Sunnah Calendar & Multi-Step Booking Wizard
    ========================================================================== */
 
-/* 1. Meridian Explorer */
+/* 1. Meridian Explorer Wrapper */
 .meridian-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .meridian-header-bar {
@@ -15,35 +19,39 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 0.85rem;
+  gap: 0.75rem;
+  width: 100%;
 }
 
 .view-toggle-pills {
   display: flex;
   background: #ffffff;
-  padding: 0.3rem;
+  padding: 0.25rem;
   border-radius: var(--radius-full);
   border: 1.5px solid #cbd5e1;
   box-shadow: var(--shadow-sm);
-  gap: 0.3rem;
+  gap: 0.25rem;
   max-width: 100%;
 }
 
 .pill-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.55rem 1.2rem;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1.15rem;
   border-radius: var(--radius-full);
   border: none;
   background: transparent;
   color: #1e293b !important;
   font-family: inherit;
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 800;
   cursor: pointer;
   transition: all var(--transition);
   touch-action: manipulation;
+  white-space: normal;
+  text-align: center;
 }
 
 .pill-btn.active {
@@ -56,28 +64,33 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 800;
   color: var(--color-primary);
   background: #ffffff;
-  padding: 0.4rem 1rem;
+  padding: 0.35rem 0.95rem;
   border-radius: var(--radius-full);
   border: 1.5px solid #a7f3d0;
   box-shadow: var(--shadow-sm);
+  max-width: 100%;
 }
 
 .live-pulse-dot {
-  width: 9px;
-  height: 9px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: var(--color-emerald);
+  flex-shrink: 0;
 }
 
 .meridian-workspace {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 2rem;
-  align-items: center;
+  align-items: start;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .meridian-canvas-box {
@@ -90,29 +103,35 @@
   align-items: center;
   position: relative;
   box-shadow: var(--shadow-md);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .body-canvas-legend {
   display: flex;
-  gap: 1.25rem;
+  gap: 1rem;
   font-size: 0.82rem;
   font-weight: 700;
   color: #1e293b;
   margin-bottom: 0.75rem;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100%;
 }
 
 .legend-item {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.35rem;
+  white-space: nowrap;
 }
 
 .legend-item .dot {
-  width: 11px;
-  height: 11px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .legend-item .dot.acu { background: var(--color-gold); }
@@ -120,8 +139,8 @@
 
 .interactive-svg-wrap {
   width: 100%;
-  max-width: 320px;
-  height: 460px;
+  max-width: 300px;
+  height: 440px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -130,12 +149,13 @@
 .human-body-svg {
   width: 100%;
   height: 100%;
+  max-height: 100%;
 }
 
 .hotspots-group.hidden { display: none; }
 .hotspots-group.visible { display: block; }
 
-/* Hotspot Nodes (Enhanced for Mobile Tapping) */
+/* Hotspot Nodes */
 .hotspot-node {
   cursor: pointer;
   transition: transform var(--transition);
@@ -143,7 +163,7 @@
 }
 
 .hotspot-node:hover, .hotspot-node:active {
-  transform: scale(1.3);
+  transform: scale(1.25);
 }
 
 .hotspot-pulse {
@@ -171,45 +191,54 @@
 
 .hotspot-node.active-selected .hotspot-core {
   fill: var(--color-primary);
-  transform: scale(1.4);
+  transform: scale(1.35);
   stroke: #facc15;
   stroke-width: 3;
 }
 
 .interactive-guide-tip {
   margin-top: 1rem;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 700;
   color: #1e293b !important;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 0.45rem;
   text-align: center;
   background: #f1f5f9;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.85rem;
   border-radius: var(--radius-full);
   border: 1px solid #cbd5e1;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Meridian Details Panel */
+/* Meridian Details Panel - iPhone & Android Shielded */
 .meridian-details-card {
   background: #ffffff;
   border: 1.5px solid #cbd5e1;
   border-radius: var(--radius-xl);
-  padding: 2.25rem 2rem;
+  padding: 2rem 1.85rem;
   box-shadow: var(--shadow-md);
   display: flex;
   flex-direction: column;
-  gap: 1.35rem;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevents overflow blowout on iOS */
+  min-width: 0;     /* Flex child constraint */
 }
 
 .zone-details-header {
   border-bottom: 1.5px solid #e2e8f0;
   padding-bottom: 0.85rem;
+  min-width: 0;
 }
 
 .zone-badge {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--color-primary);
   font-weight: 800;
   display: inline-flex;
@@ -220,66 +249,90 @@
   border: 1px solid var(--color-primary-border);
   padding: 0.25rem 0.75rem;
   border-radius: var(--radius-full);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.45rem;
 }
 
 .zone-title {
-  font-size: 1.75rem;
+  font-size: clamp(1.35rem, 3.5vw, 1.75rem);
   color: #0f172a !important;
+  line-height: 1.25;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.zone-symptoms-list {
+  min-width: 0;
 }
 
 .zone-symptoms-list h4 {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #0f172a !important;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.65rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.45rem;
 }
 
 .symptom-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .symptom-chip {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 700;
-  padding: 0.4rem 0.85rem;
+  padding: 0.4rem 0.8rem;
   background: #f8fafc;
   border: 1.5px solid #cbd5e1;
   border-radius: var(--radius-full);
   color: #0f172a !important;
+  max-width: 100%;
+  white-space: normal;
+  line-height: 1.35;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
 }
 
 .zone-meridian-points-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.85rem;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .point-box {
-  padding: 1.15rem 1rem;
+  padding: 1rem 0.85rem;
   background: #f8fafc;
   border-radius: var(--radius-md);
   border: 1.5px solid #cbd5e1;
+  box-sizing: border-box;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .point-box-title {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 800;
   margin-bottom: 0.65rem;
   color: #0f172a !important;
+  line-height: 1.25;
+  word-break: break-word;
 }
 
 .point-box-title .indicator {
-  width: 9px;
-  height: 9px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .point-box-title .indicator.acu { background: var(--color-gold); }
@@ -289,40 +342,68 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .point-chips code {
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 800;
   padding: 0.25rem 0.55rem;
   background: #ffffff;
   border-radius: 6px;
   color: var(--color-primary) !important;
   border: 1.5px solid #cbd5e1;
+  max-width: 100%;
+  white-space: normal;
+  line-height: 1.3;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
 }
 
 .zone-recovery-metrics {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.85rem;
-  padding: 1.15rem 1rem;
+  gap: 0.75rem;
+  padding: 1rem 0.75rem;
   background: var(--color-primary-light);
   border-radius: var(--radius-md);
   border: 1.5px solid var(--color-primary-border);
   text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .metric-val {
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   font-weight: 800;
   font-family: var(--font-heading);
   color: var(--color-primary) !important;
+  line-height: 1.15;
 }
 
 .metric-lbl {
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: #334155 !important;
+  margin-top: 0.2rem;
+  word-break: break-word;
+}
+
+.zone-action-bar {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.zone-action-bar .btn {
+  white-space: normal !important;
+  text-align: center;
+  line-height: 1.35;
+  padding: 0.8rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* 2. Sunnah Calendar Card */
@@ -330,8 +411,10 @@
   background: #ffffff;
   border: 1.5px solid #cbd5e1;
   border-radius: var(--radius-xl);
-  padding: 2.75rem 2.25rem;
+  padding: 2.5rem 2rem;
   box-shadow: var(--shadow-md);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .sunnah-top-banner {
@@ -339,34 +422,35 @@
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  margin-bottom: 2.25rem;
+  margin-bottom: 2rem;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .crescent-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--color-gold);
   font-weight: 800;
   text-transform: uppercase;
   background: var(--color-gold-light);
   border: 1px solid var(--color-gold-border);
-  padding: 0.35rem 0.95rem;
+  padding: 0.3rem 0.85rem;
   border-radius: var(--radius-full);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.45rem;
 }
 
 .sunnah-title {
-  font-size: clamp(1.6rem, 3.5vw, 2.1rem);
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
   color: #0f172a !important;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.35rem;
 }
 
 .sunnah-subtitle {
   max-width: 620px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #1e293b !important;
 }
 
@@ -378,8 +462,8 @@
 }
 
 .countdown-circle {
-  width: 90px;
-  height: 90px;
+  width: 86px;
+  height: 86px;
   border-radius: 50%;
   border: 3px solid var(--color-gold);
   box-shadow: var(--shadow-md);
@@ -388,11 +472,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.35rem;
 }
 
 .countdown-number {
-  font-size: 2.1rem;
+  font-size: 2rem;
   font-weight: 800;
   font-family: var(--font-heading);
   color: var(--color-gold);
@@ -400,30 +484,31 @@
 }
 
 .countdown-label {
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 800;
   text-transform: uppercase;
   color: #475569;
 }
 
 .next-target-text {
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 800;
   color: var(--color-primary) !important;
 }
 
 .sunnah-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.35rem;
-  margin-bottom: 2.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+  width: 100%;
 }
 
 .sunnah-day-box {
   background: #ffffff;
   border: 1.5px solid #cbd5e1;
   border-radius: var(--radius-lg);
-  padding: 1.75rem 1.5rem;
+  padding: 1.65rem 1.35rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -431,6 +516,8 @@
   position: relative;
   box-shadow: var(--shadow-sm);
   transition: all var(--transition);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .sunnah-day-box:hover {
@@ -446,66 +533,66 @@
 
 .prime-tag {
   position: absolute;
-  top: -12px;
+  top: -11px;
   background: var(--color-gold);
   color: #ffffff;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 800;
-  padding: 0.25rem 0.85rem;
+  padding: 0.2rem 0.8rem;
   border-radius: var(--radius-full);
 }
 
 .hijri-day-pill {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 800;
   color: var(--color-primary);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.35rem;
 }
 
 .sunnah-greg-date {
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   font-weight: 800;
   font-family: var(--font-heading);
   color: #0f172a !important;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 }
 
 .sunnah-day-name {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 700;
   color: #334155 !important;
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.75rem;
 }
 
 .sunnah-benefits-mini {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 700;
   color: var(--color-emerald) !important;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.15rem;
 }
 
 .sunnah-fasting-guide {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  padding-top: 1.5rem;
+  gap: 1.35rem;
+  padding-top: 1.35rem;
   border-top: 1.5px solid #e2e8f0;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   color: #1e293b !important;
+  width: 100%;
 }
 
 .guide-col {
   display: flex;
   align-items: flex-start;
-  gap: 0.65rem;
+  gap: 0.6rem;
 }
 
 .guide-col strong {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.35rem;
   color: var(--color-primary);
-  white-space: nowrap;
 }
 
 /* 3. Booking Wizard Modal */
@@ -520,7 +607,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 0.75rem;
   opacity: 0;
   visibility: hidden;
   transition: opacity var(--transition), visibility var(--transition);
@@ -541,10 +628,11 @@
   overflow-y: auto;
   box-shadow: var(--shadow-lg);
   position: relative;
+  box-sizing: border-box;
 }
 
 .modal-header {
-  padding: 1.25rem 1.75rem;
+  padding: 1.15rem 1.5rem;
   border-bottom: 1.5px solid #e2e8f0;
   display: flex;
   align-items: center;
@@ -556,7 +644,7 @@
 }
 
 .modal-header h3 {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   color: #0f172a !important;
   display: flex;
   align-items: center;
@@ -577,22 +665,22 @@
 }
 
 .modal-body {
-  padding: 1.75rem;
+  padding: 1.5rem;
 }
 
 .step-progress-indicator {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.85rem;
+  margin-bottom: 1.35rem;
+  padding-bottom: 0.75rem;
   border-bottom: 1.5px solid #e2e8f0;
-  gap: 0.4rem;
+  gap: 0.35rem;
   flex-wrap: wrap;
 }
 
 .step-item {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: #64748b;
 }
@@ -600,7 +688,7 @@
 .step-item.active {
   color: var(--color-primary);
   border-bottom: 3px solid var(--color-primary);
-  padding-bottom: 0.25rem;
+  padding-bottom: 0.2rem;
 }
 
 .step-item.completed {
@@ -608,23 +696,23 @@
 }
 
 .step-heading {
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   color: #0f172a !important;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.3rem;
 }
 
 .step-subheading {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: #334155 !important;
-  margin-bottom: 1.35rem;
+  margin-bottom: 1.25rem;
 }
 
 /* Services Radio Cards */
 .services-radio-grid {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  margin-bottom: 1.75rem;
+  gap: 0.7rem;
+  margin-bottom: 1.5rem;
 }
 
 .service-radio-card {
@@ -641,8 +729,8 @@
 .service-radio-card .card-inner {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
-  padding: 1rem 1.15rem;
+  gap: 0.85rem;
+  padding: 0.95rem 1.1rem;
   border-radius: var(--radius-md);
   background: #ffffff;
   border: 1.5px solid #cbd5e1;
@@ -660,36 +748,36 @@
 }
 
 .card-icon-area {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: 10px;
   background: #ffffff;
   color: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   flex-shrink: 0;
   border: 1px solid var(--color-primary-border);
 }
 
 .card-details h4 {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: #0f172a !important;
   margin-bottom: 0.2rem;
 }
 
 .service-desc {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: #1e293b !important;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.35rem;
 }
 
 .meta-row {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  font-size: 0.82rem;
+  gap: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 700;
 }
 
@@ -701,20 +789,20 @@
 /* Digital Pass Confirmation */
 .confirmation-badge-header {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.35rem;
 }
 
 .conf-icon-glow {
-  width: 58px;
-  height: 58px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   background: #ecfdf5;
   color: var(--color-emerald);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  margin: 0 auto 0.85rem auto;
+  font-size: 1.85rem;
+  margin: 0 auto 0.75rem auto;
   border: 2px solid #a7f3d0;
 }
 
@@ -722,10 +810,11 @@
   background: #ffffff;
   border: 2px dashed var(--color-primary);
   border-radius: var(--radius-lg);
-  padding: 1.75rem;
-  margin-bottom: 1.75rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
   box-shadow: var(--shadow-md);
   position: relative;
+  box-sizing: border-box;
 }
 
 .pass-header {
@@ -733,22 +822,22 @@
   align-items: flex-start;
   justify-content: space-between;
   border-bottom: 1.5px solid #e2e8f0;
-  padding-bottom: 0.85rem;
-  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
 }
 
 .pass-brand h4 {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--color-primary) !important;
 }
 
 .pass-brand small {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: #334155 !important;
 }
 
 .pass-ref strong {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-family: monospace;
   color: #0f172a !important;
 }
@@ -756,37 +845,38 @@
 .pass-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.85rem;
-  margin-bottom: 0.75rem;
+  gap: 0.75rem;
+  margin-bottom: 0.65rem;
 }
 
 .pass-row.highlight-box {
   background: var(--color-primary-light);
-  padding: 0.85rem;
+  padding: 0.75rem;
   border-radius: var(--radius-sm);
   border: 1.5px solid var(--color-primary-border);
 }
 
 .pass-item .label {
   display: block;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
   color: #475569;
 }
 
 .pass-item .val {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #0f172a !important;
+  word-break: break-word;
 }
 
 .pass-footer {
-  margin-top: 1.15rem;
-  padding-top: 0.85rem;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
   border-top: 1.5px dashed #cbd5e1;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: #334155 !important;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -795,12 +885,12 @@
 .confirmation-actions {
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 0.75rem;
 }
 
 .secondary-pass-actions {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.65rem;
 }
 
 .secondary-pass-actions .btn {
@@ -808,12 +898,12 @@
 }
 
 /* ==========================================================================
-   Mobile Overrides for Interactive Subsystems
+   iPhone & Android Precision Breakpoint Rules (<= 768px and <= 480px)
    ========================================================================== */
 @media (max-width: 768px) {
   .meridian-workspace {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
   .view-toggle-pills {
@@ -822,30 +912,51 @@
 
   .pill-btn {
     flex: 1;
-    justify-content: center;
-    font-size: 0.8rem;
-    padding: 0.5rem 0.5rem;
+    font-size: 0.78rem;
+    padding: 0.45rem 0.4rem;
   }
 
   .interactive-svg-wrap {
-    height: 380px;
-    max-width: 260px;
+    height: 360px;
+    max-width: 250px;
   }
 
   .meridian-details-card {
-    padding: 1.5rem 1.25rem;
+    padding: 1.35rem 1rem;
+    border-radius: var(--radius-lg);
   }
 
   .zone-meridian-points-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Stack acupoint and hijama boxes vertically */
+    gap: 0.75rem;
+  }
+
+  .point-box {
+    padding: 0.85rem 0.75rem;
+  }
+
+  .zone-recovery-metrics {
+    padding: 0.85rem 0.65rem;
+  }
+
+  .metric-val {
+    font-size: 1.25rem;
   }
 
   .sunnah-calendar-card {
-    padding: 1.75rem 1.25rem;
+    padding: 1.5rem 1rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .sunnah-top-banner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .sunnah-fasting-guide {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .modal-dialog {
@@ -854,19 +965,40 @@
   }
 
   .modal-header {
-    padding: 1rem 1.25rem;
+    padding: 0.85rem 1rem;
   }
 
   .modal-body {
-    padding: 1.25rem;
+    padding: 1rem;
   }
 
   .pass-row {
     grid-template-columns: 1fr;
-    gap: 0.5rem;
+    gap: 0.45rem;
   }
 
   .digital-pass-card {
-    padding: 1.25rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 380px) {
+  /* Specific protections for compact iPhones like iPhone SE / Mini */
+  .pill-btn {
+    font-size: 0.72rem;
+    padding: 0.4rem 0.25rem;
+  }
+  
+  .symptom-chip {
+    font-size: 0.78rem;
+    padding: 0.35rem 0.65rem;
+  }
+
+  .zone-title {
+    font-size: 1.25rem;
+  }
+
+  .point-chips code {
+    font-size: 0.75rem;
   }
 }
