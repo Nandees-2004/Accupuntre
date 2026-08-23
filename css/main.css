@@ -1,5 +1,6 @@
 /* ==========================================================================
    Nisha Acupuncture & Hijama Clinic - Ultra High Contrast Clean Design System
+   Mobile-First & Fully Responsive
    Madurai, Tamil Nadu
    ========================================================================== */
 
@@ -28,7 +29,7 @@
   --bg-topbar: #064e3b;
   --bg-footer: #022c22;
 
-  /* WCAG AAA Solid High-Contrast Text Colors (NO washed out colors) */
+  /* WCAG AAA Solid High-Contrast Text Colors */
   --text-heading: #0f172a;       /* Solid charcoal navy black */
   --text-body: #1e293b;          /* Dark slate - 100% sharp readability */
   --text-muted: #334155;         /* Medium dark slate */
@@ -63,11 +64,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 body {
@@ -76,6 +79,7 @@ body {
   color: var(--text-body);
   line-height: 1.65;
   overflow-x: hidden;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -116,7 +120,7 @@ img {
 }
 
 .section {
-  padding: 5.5rem 0;
+  padding: 5rem 0;
   position: relative;
   background-color: #ffffff;
 }
@@ -130,7 +134,7 @@ img {
 .section-header {
   text-align: center;
   max-width: 780px;
-  margin: 0 auto 3.5rem auto;
+  margin: 0 auto 3rem auto;
 }
 
 .section-tag {
@@ -146,7 +150,7 @@ img {
   border: 1.5px solid var(--color-primary-border);
   padding: 0.4rem 1.15rem;
   border-radius: var(--radius-full);
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
 }
 
 .section-tag.tag-gold {
@@ -156,13 +160,14 @@ img {
 }
 
 .section-title {
-  font-size: 2.6rem;
+  font-size: clamp(1.85rem, 4vw, 2.6rem);
   color: var(--text-heading);
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
+  line-height: 1.2;
 }
 
 .section-subtitle {
-  font-size: 1.15rem;
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
   color: var(--text-muted);
   line-height: 1.65;
 }
@@ -184,13 +189,14 @@ img {
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 0.95rem;
-  padding: 0.85rem 1.75rem;
+  padding: 0.85rem 1.6rem;
   border-radius: var(--radius-full);
   border: 1.5px solid transparent;
   cursor: pointer;
   transition: all var(--transition);
   text-decoration: none;
   white-space: nowrap;
+  touch-action: manipulation;
 }
 
 .btn-primary {
@@ -199,7 +205,7 @@ img {
   box-shadow: 0 4px 14px rgba(6, 95, 70, 0.25);
 }
 
-.btn-primary:hover {
+.btn-primary:hover, .btn-primary:active {
   background: var(--color-primary-hover);
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(6, 95, 70, 0.35);
@@ -211,7 +217,7 @@ img {
   box-shadow: 0 4px 14px rgba(180, 83, 9, 0.25);
 }
 
-.btn-gold:hover {
+.btn-gold:hover, .btn-gold:active {
   background: #92400e;
   transform: translateY(-2px);
 }
@@ -222,7 +228,7 @@ img {
   border-color: var(--color-primary);
 }
 
-.btn-outline-primary:hover {
+.btn-outline-primary:hover, .btn-outline-primary:active {
   background: var(--color-primary);
   color: #ffffff !important;
   transform: translateY(-2px);
@@ -235,7 +241,7 @@ img {
   box-shadow: 0 4px 15px rgba(22, 163, 74, 0.3);
 }
 
-.btn-whatsapp:hover {
+.btn-whatsapp:hover, .btn-whatsapp:active {
   background: var(--color-whatsapp-hover);
   transform: translateY(-2px);
 }
@@ -246,15 +252,32 @@ img {
   border-color: #cbd5e1;
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover, .btn-secondary:active {
   background: #e2e8f0;
 }
 
 .btn-sm {
-  padding: 0.55rem 1.25rem;
+  padding: 0.55rem 1.15rem;
   font-size: 0.85rem;
 }
 
 .btn-block {
   width: 100%;
+}
+
+/* Mobile-Specific Refinements */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  .section {
+    padding: 3.5rem 0;
+  }
+  .section-header {
+    margin-bottom: 2.25rem;
+  }
+  .btn {
+    font-size: 0.92rem;
+    padding: 0.8rem 1.25rem;
+  }
 }
