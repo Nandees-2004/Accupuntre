@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Nisha Acupuncture & Hijama Clinic - Interactive Subsystems CSS
+   Nisha Acupuncture & Hijama Clinic - Interactive Subsystems CSS (Light Theme)
    Meridian Explorer, Sunnah Calendar & Multi-Step Booking Wizard
    ========================================================================== */
 
@@ -20,10 +20,11 @@
 
 .view-toggle-pills {
   display: flex;
-  background: var(--bg-surface-elevated);
+  background: #ffffff;
   padding: 0.35rem;
   border-radius: var(--radius-full);
-  border: 1px solid var(--border-subtle);
+  border: 1.5px solid var(--border-card);
+  box-shadow: var(--shadow-xs);
   gap: 0.35rem;
 }
 
@@ -31,43 +32,43 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 1.25rem;
+  padding: 0.55rem 1.35rem;
   border-radius: var(--radius-full);
   border: none;
   background: transparent;
-  color: var(--text-muted);
+  color: var(--text-body);
   font-family: inherit;
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 0.88rem;
+  font-weight: 700;
   cursor: pointer;
   transition: all var(--transition-fast);
 }
 
 .pill-btn.active {
-  background: linear-gradient(135deg, #1e6b52, #0f3d2e);
+  background: var(--color-primary);
   color: #ffffff;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 4px 12px rgba(11, 77, 52, 0.25);
 }
 
 .meridian-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.85rem;
-  color: var(--color-emerald);
-  background: rgba(16, 185, 129, 0.1);
-  padding: 0.4rem 1rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  padding: 0.45rem 1.15rem;
   border-radius: var(--radius-full);
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  border: 1px solid var(--color-primary-border);
 }
 
 .live-pulse-dot {
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
-  background: var(--color-emerald);
-  animation: pulseGlow 1.8s infinite;
+  background: var(--color-accent-emerald);
+  animation: pulseBadge 1.8s infinite;
 }
 
 .meridian-workspace {
@@ -78,36 +79,38 @@
 }
 
 .meridian-canvas-box {
-  background: var(--bg-glass-card);
-  border: 1px solid var(--border-glass);
-  border-radius: var(--radius-lg);
-  padding: 1.5rem;
+  background: #ffffff;
+  border: 1.5px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  padding: 1.75rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
+  box-shadow: var(--shadow-md);
 }
 
 .body-canvas-legend {
   display: flex;
   gap: 1.5rem;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
   margin-bottom: 1rem;
 }
 
 .legend-item {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.45rem;
 }
 
 .legend-item .dot {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
 }
 
-.legend-item .dot.acu { background: var(--color-accent-gold); }
+.legend-item .dot.acu { background: #d49e1a; }
 .legend-item .dot.hijama { background: #ef4444; }
 
 .interactive-svg-wrap {
@@ -122,16 +125,11 @@
 .human-body-svg {
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0 8px 20px rgba(11, 77, 52, 0.12));
 }
 
-.hotspots-group.hidden {
-  display: none;
-}
-
-.hotspots-group.visible {
-  display: block;
-}
+.hotspots-group.hidden { display: none; }
+.hotspots-group.visible { display: block; }
 
 /* Hotspot Nodes */
 .hotspot-node {
@@ -140,18 +138,18 @@
 }
 
 .hotspot-node:hover {
-  transform: scale(1.2);
+  transform: scale(1.25);
 }
 
 .hotspot-pulse {
-  fill: rgba(212, 175, 55, 0.25);
-  animation: pulseGlow 2s infinite ease-in-out;
+  fill: rgba(180, 131, 22, 0.3);
+  animation: pulseBadge 2s infinite ease-in-out;
 }
 
 .hotspot-core {
-  fill: var(--color-accent-gold);
+  fill: #d49e1a;
   stroke: #ffffff;
-  stroke-width: 1.5;
+  stroke-width: 2;
   transition: all var(--transition-fast);
 }
 
@@ -160,33 +158,41 @@
 }
 
 .hotspot-label {
-  fill: #071f17;
-  font-size: 8px;
+  fill: #ffffff;
+  font-size: 8.5px;
   font-weight: 800;
   font-family: var(--font-body);
   pointer-events: none;
 }
 
 .hotspot-node.active-selected .hotspot-core {
-  fill: var(--color-emerald);
-  transform: scale(1.3);
-  stroke: var(--color-accent-gold);
-  stroke-width: 2;
+  fill: var(--color-primary);
+  transform: scale(1.35);
+  stroke: #facc15;
+  stroke-width: 2.5;
 }
 
 .interactive-guide-tip {
-  margin-top: 1rem;
-  font-size: 0.8rem;
-  color: var(--text-muted);
+  margin-top: 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-body);
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
   text-align: center;
+  background: var(--bg-surface-subtle);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
 }
 
 /* Meridian Details Panel */
 .meridian-details-card {
-  padding: 2.25rem;
+  background: #ffffff;
+  border: 1.5px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem 2.25rem;
+  box-shadow: var(--shadow-md);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -198,26 +204,31 @@
 }
 
 .zone-badge {
-  font-size: 0.8rem;
-  color: var(--color-accent-gold);
+  font-size: 0.82rem;
+  color: var(--color-primary);
   font-weight: 700;
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.4rem;
   text-transform: uppercase;
-  margin-bottom: 0.35rem;
+  background: var(--color-primary-light);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.5rem;
 }
 
 .zone-title {
-  font-size: 1.8rem;
+  font-size: 1.85rem;
+  color: var(--text-heading);
 }
 
 .zone-symptoms-list h4 {
-  font-size: 0.95rem;
-  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: var(--text-heading);
+  margin-bottom: 0.85rem;
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
 }
 
 .symptom-tags {
@@ -227,12 +238,13 @@
 }
 
 .symptom-chip {
-  font-size: 0.82rem;
-  padding: 0.35rem 0.85rem;
-  background: var(--bg-surface-elevated);
-  border: 1px solid var(--border-subtle);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.4rem 0.95rem;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-card);
   border-radius: var(--radius-full);
-  color: var(--text-main);
+  color: var(--text-heading);
 }
 
 .zone-meridian-points-grid {
@@ -242,69 +254,78 @@
 }
 
 .point-box {
-  padding: 1rem;
-  background: rgba(0, 0, 0, 0.15);
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border-subtle);
+  padding: 1.15rem;
+  background: var(--bg-surface-subtle);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-card);
 }
 
 .point-box-title {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.85rem;
-  margin-bottom: 0.6rem;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-bottom: 0.65rem;
+  color: var(--text-heading);
 }
 
 .point-box-title .indicator {
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
 }
 
-.point-box-title .indicator.acu { background: var(--color-accent-gold); }
+.point-box-title .indicator.acu { background: #d49e1a; }
 .point-box-title .indicator.hijama { background: #ef4444; }
 
 .point-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem;
+  gap: 0.4rem;
 }
 
 .point-chips code {
-  font-size: 0.78rem;
-  padding: 0.2rem 0.5rem;
-  background: var(--bg-surface);
-  border-radius: 4px;
-  color: var(--color-accent-gold);
-  border: 1px solid var(--border-subtle);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  background: #ffffff;
+  border-radius: 6px;
+  color: var(--color-primary);
+  border: 1px solid var(--border-card);
 }
 
 .zone-recovery-metrics {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  padding: 1rem;
-  background: var(--bg-surface-elevated);
+  padding: 1.25rem;
+  background: var(--color-primary-light);
   border-radius: var(--radius-md);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--color-primary-border);
   text-align: center;
 }
 
 .metric-val {
-  font-size: 1.4rem;
+  font-size: 1.55rem;
   font-weight: 800;
   font-family: var(--font-heading);
+  color: var(--color-primary);
 }
 
 .metric-lbl {
-  font-size: 0.78rem;
+  font-size: 0.82rem;
+  font-weight: 600;
   color: var(--text-muted);
 }
 
 /* 2. Sunnah Calendar Card */
 .sunnah-calendar-card {
-  padding: 2.75rem 2.25rem;
+  background: #ffffff;
+  border: 1.5px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow-md);
 }
 
 .sunnah-top-banner {
@@ -319,22 +340,27 @@
 .crescent-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.82rem;
-  color: var(--color-accent-gold);
+  gap: 0.45rem;
+  font-size: 0.85rem;
+  color: var(--color-accent-gold-dark);
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 0.5rem;
+  background: var(--color-accent-gold-light);
+  padding: 0.35rem 0.95rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.65rem;
 }
 
 .sunnah-title {
-  font-size: 1.85rem;
+  font-size: 2rem;
+  color: var(--text-heading);
   margin-bottom: 0.5rem;
 }
 
 .sunnah-subtitle {
-  max-width: 600px;
-  font-size: 0.95rem;
+  max-width: 620px;
+  font-size: 0.98rem;
+  color: var(--text-body);
 }
 
 .banner-countdown {
@@ -345,12 +371,12 @@
 }
 
 .countdown-circle {
-  width: 90px;
-  height: 90px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
-  border: 2px solid var(--color-accent-gold);
+  border: 3px solid var(--color-accent-gold);
   box-shadow: var(--shadow-gold);
-  background: var(--bg-surface-elevated);
+  background: var(--color-accent-gold-light);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -359,115 +385,123 @@
 }
 
 .countdown-number {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 800;
   font-family: var(--font-heading);
-  color: var(--color-accent-gold);
+  color: var(--color-accent-gold-dark);
   line-height: 1;
 }
 
 .countdown-label {
-  font-size: 0.65rem;
+  font-size: 0.68rem;
+  font-weight: 700;
   text-transform: uppercase;
   color: var(--text-muted);
 }
 
 .next-target-text {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--color-emerald);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-primary);
 }
 
 .sunnah-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   gap: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .sunnah-day-box {
-  background: var(--bg-surface-elevated);
-  border: 1px solid var(--border-glass);
-  border-radius: var(--radius-md);
-  padding: 1.75rem 1.5rem;
+  background: #ffffff;
+  border: 1.5px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   position: relative;
-  transition: transform var(--transition-fast), border-color var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
 }
 
 .sunnah-day-box:hover {
-  transform: translateY(-4px);
-  border-color: var(--color-accent-gold);
+  transform: translateY(-5px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
 }
 
 .sunnah-day-box.prime-day {
   border-color: var(--color-accent-gold);
   box-shadow: var(--shadow-gold);
+  background: #fffdf8;
 }
 
 .prime-tag {
   position: absolute;
-  top: -10px;
-  background: linear-gradient(135deg, #d4af37, #b89726);
-  color: #071f17;
-  font-size: 0.7rem;
+  top: -12px;
+  background: linear-gradient(135deg, #d49e1a, #b48316);
+  color: #ffffff;
+  font-size: 0.72rem;
   font-weight: 800;
-  padding: 0.2rem 0.75rem;
+  padding: 0.25rem 0.85rem;
   border-radius: var(--radius-full);
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.3rem;
+  box-shadow: var(--shadow-xs);
 }
 
 .hijri-day-pill {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 700;
-  color: var(--color-accent-gold);
+  color: var(--color-primary);
   margin-bottom: 0.5rem;
 }
 
 .sunnah-greg-date {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 800;
   font-family: var(--font-heading);
+  color: var(--text-heading);
   margin-bottom: 0.25rem;
 }
 
 .sunnah-day-name {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
+  font-weight: 600;
   color: var(--text-muted);
   margin-bottom: 1rem;
 }
 
 .sunnah-benefits-mini {
-  font-size: 0.8rem;
-  color: var(--color-emerald);
-  margin-bottom: 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-accent-emerald);
+  margin-bottom: 1.35rem;
 }
 
 .sunnah-fasting-guide {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  padding-top: 1.5rem;
+  gap: 1.75rem;
+  padding-top: 1.75rem;
   border-top: 1px solid var(--border-subtle);
-  font-size: 0.85rem;
+  font-size: 0.92rem;
 }
 
 .guide-col {
   display: flex;
   align-items: flex-start;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .guide-col strong {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  color: var(--color-accent-gold);
+  gap: 0.4rem;
+  color: var(--color-primary);
   white-space: nowrap;
 }
 
@@ -478,9 +512,9 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(7, 38, 26, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   z-index: 2000;
   display: flex;
   align-items: center;
@@ -497,56 +531,51 @@
 }
 
 .modal-dialog {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-glass);
-  border-radius: var(--radius-lg);
+  background: #ffffff;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
   width: 100%;
-  max-width: 720px;
+  max-width: 740px;
   max-height: 90vh;
   overflow-y: auto;
   box-shadow: var(--shadow-lg);
   position: relative;
-  animation: modalPop 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@keyframes modalPop {
-  from { transform: scale(0.92) translateY(20px); opacity: 0; }
-  to { transform: scale(1) translateY(0); opacity: 1; }
 }
 
 .modal-header {
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 2.25rem;
   border-bottom: 1px solid var(--border-subtle);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: var(--bg-surface-subtle);
 }
 
 .modal-header h3 {
-  font-size: 1.35rem;
+  font-size: 1.4rem;
+  color: var(--text-heading);
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
 }
 
 .modal-close-icon {
   background: none;
   border: none;
   color: var(--text-muted);
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   cursor: pointer;
-  transition: color var(--transition-fast);
+  line-height: 1;
 }
 
 .modal-close-icon:hover {
-  color: var(--color-danger);
+  color: #ef4444;
 }
 
 .modal-body {
-  padding: 2rem;
+  padding: 2.25rem;
 }
 
-/* Wizard Step Progression */
 .step-progress-indicator {
   display: flex;
   align-items: center;
@@ -559,28 +588,30 @@
 }
 
 .step-item {
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: 700;
   color: var(--text-muted);
 }
 
 .step-item.active {
-  color: var(--color-accent-gold);
-  border-bottom: 2px solid var(--color-accent-gold);
+  color: var(--color-primary);
+  border-bottom: 2.5px solid var(--color-primary);
   padding-bottom: 0.25rem;
 }
 
 .step-item.completed {
-  color: var(--color-emerald);
+  color: var(--color-accent-emerald);
 }
 
 .step-heading {
-  font-size: 1.4rem;
+  font-size: 1.45rem;
+  color: var(--text-heading);
   margin-bottom: 0.35rem;
 }
 
 .step-subheading {
-  font-size: 0.88rem;
+  font-size: 0.92rem;
+  color: var(--text-muted);
   margin-bottom: 1.5rem;
 }
 
@@ -607,164 +638,89 @@
   display: flex;
   align-items: flex-start;
   gap: 1.25rem;
-  padding: 1.1rem 1.25rem;
+  padding: 1.2rem 1.35rem;
   border-radius: var(--radius-md);
-  background: var(--bg-surface-elevated);
-  border: 1.5px solid var(--border-subtle);
+  background: #ffffff;
+  border: 1.5px solid var(--border-card);
   transition: all var(--transition-fast);
 }
 
 .service-radio-card:hover .card-inner {
-  border-color: rgba(212, 175, 55, 0.4);
+  border-color: var(--color-primary);
 }
 
 .service-radio-card.selected .card-inner {
-  border-color: var(--color-accent-gold);
-  background: rgba(30, 107, 82, 0.2);
-  box-shadow: var(--shadow-sm);
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+  box-shadow: 0 4px 14px rgba(11, 77, 52, 0.12);
 }
 
 .card-icon-area {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: rgba(212, 175, 55, 0.15);
-  color: var(--color-accent-gold);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #ffffff;
+  color: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   flex-shrink: 0;
+  border: 1px solid var(--color-primary-border);
 }
 
 .card-details h4 {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
+  color: var(--text-heading);
   margin-bottom: 0.25rem;
 }
 
 .service-desc {
-  font-size: 0.82rem;
+  font-size: 0.85rem;
+  color: var(--text-body);
   margin-bottom: 0.5rem;
 }
 
 .meta-row {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  font-size: 0.8rem;
+  gap: 1.25rem;
+  font-size: 0.82rem;
+  font-weight: 600;
 }
 
 .price-tag {
-  font-weight: 700;
-  color: var(--color-accent-gold);
+  font-weight: 800;
+  color: var(--color-primary);
 }
 
-/* Slot Selection */
-.slot-selection-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  margin-bottom: 2rem;
-}
-
-.doctor-badge-info {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  padding: 1rem;
-  background: var(--bg-surface-elevated);
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border-subtle);
-}
-
-.doc-avatar {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--color-primary-light);
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.doc-meta strong {
-  display: block;
-  font-size: 0.9rem;
-}
-
-.doc-meta small {
-  color: var(--text-muted);
-  font-size: 0.78rem;
-}
-
-/* Patient Form */
-.patient-form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
-  margin-bottom: 2rem;
-}
-
-.full-col {
-  grid-column: span 2;
-}
-
-.gender-radio-group {
-  display: flex;
-  gap: 1rem;
-  margin-top: 0.35rem;
-}
-
-.gender-pill {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1rem;
-  background: var(--bg-surface-elevated);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  font-size: 0.85rem;
-}
-
-.wizard-footer-buttons {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border-subtle);
-}
-
-/* Digital Pass Confirmation Step */
+/* Digital Pass Confirmation */
 .confirmation-badge-header {
   text-align: center;
   margin-bottom: 1.75rem;
 }
 
 .conf-icon-glow {
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
-  background: rgba(16, 185, 129, 0.2);
-  color: var(--color-emerald);
+  background: #ecfdf5;
+  color: var(--color-accent-emerald);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin: 0 auto 1rem auto;
-  box-shadow: var(--shadow-emerald);
+  border: 2px solid #a7f3d0;
 }
 
 .digital-pass-card {
-  background: linear-gradient(135deg, #102820 0%, #0a1914 100%);
-  border: 2px dashed var(--color-accent-gold);
-  border-radius: var(--radius-md);
-  padding: 1.75rem;
+  background: #ffffff;
+  border: 2px dashed var(--color-primary);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
   margin-bottom: 2rem;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-md);
   position: relative;
 }
 
@@ -772,36 +728,25 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  border-bottom: 1.5px solid var(--border-card);
   padding-bottom: 1rem;
   margin-bottom: 1.25rem;
 }
 
 .pass-brand h4 {
-  font-size: 1.15rem;
-  color: var(--color-accent-gold);
+  font-size: 1.2rem;
+  color: var(--color-primary);
 }
 
 .pass-brand small {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
 }
 
-.pass-ref {
-  text-align: right;
-}
-
-.ref-tag {
-  display: block;
-  font-size: 0.65rem;
-  letter-spacing: 0.1em;
-  color: var(--color-emerald);
-}
-
 .pass-ref strong {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-family: monospace;
-  color: #ffffff;
+  color: var(--text-heading);
 }
 
 .pass-row {
@@ -812,36 +757,32 @@
 }
 
 .pass-row.highlight-box {
-  background: rgba(212, 175, 55, 0.08);
-  padding: 0.85rem;
+  background: var(--color-primary-light);
+  padding: 0.95rem;
   border-radius: var(--radius-sm);
+  border: 1px solid var(--color-primary-border);
 }
 
 .pass-item .label {
   display: block;
-  font-size: 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 600;
   color: var(--text-muted);
 }
 
 .pass-item .val {
-  font-size: 0.95rem;
-}
-
-.pass-notes {
-  font-size: 0.85rem;
-  margin-top: 0.5rem;
-  padding-top: 0.5rem;
-  border-top: 1px solid var(--border-subtle);
+  font-size: 0.98rem;
+  color: var(--text-heading);
 }
 
 .pass-footer {
-  margin-top: 1.25rem;
+  margin-top: 1.35rem;
   padding-top: 1rem;
-  border-top: 1px dashed rgba(212, 175, 55, 0.3);
+  border-top: 1.5px dashed var(--border-card);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
 }
 
@@ -861,19 +802,6 @@
 }
 
 @media (max-width: 768px) {
-  .meridian-workspace {
-    grid-template-columns: 1fr;
-  }
-
-  .patient-form-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .full-col {
-    grid-column: span 1;
-  }
-
-  .sunnah-fasting-guide {
-    grid-template-columns: 1fr;
-  }
+  .meridian-workspace { grid-template-columns: 1fr; }
+  .sunnah-fasting-guide { grid-template-columns: 1fr; }
 }

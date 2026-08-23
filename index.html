@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
   <meta name="geo.position" content="9.9252;78.1198">
   <meta name="ICBM" content="9.9252, 78.1198">
 
-  <!-- Open Graph / Facebook -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nishaacupuncture.com/">
   <meta property="og:title" content="Nisha Acupuncture & Hijama Clinic Madurai">
@@ -23,24 +23,50 @@
   <meta property="og:image" content="assets/images/hero_clinic_serene.jpg">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4af37'><path d='M12 2L15 8L21 9L17 14L18 20L12 17L6 20L7 14L3 9L9 8L12 2Z'/></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230b4d34'><path d='M12 2L15 8L21 9L17 14L18 20L12 17L6 20L7 14L3 9L9 8L12 2Z'/></svg>">
+
+  <!-- FontAwesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/interactive.css">
-
-  <!-- Lucide Icons Library -->
-  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
-  <!-- 1. Navigation Header -->
+  <!-- 1. Top Information Bar -->
+  <div class="top-announcement-bar">
+    <div class="container top-bar-container">
+      <div class="top-bar-left">
+        <div class="top-info-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span data-en="EB Colony Main Road, SS Colony / Arasaradi, Madurai-625014" data-ta="இபி காலனி மெயின் ரோடு, எஸ்.எஸ் காலனி / அரசரடி, மதுரை-625014">EB Colony Main Road, SS Colony / Arasaradi, Madurai-625014</span>
+        </div>
+        <div class="top-info-item">
+          <i class="fa-solid fa-clock"></i>
+          <span data-en="Mon - Sat: 9:00 AM - 8:30 PM (Sun By Appt)" data-ta="திங்கள் - சனி: காலை 9:00 - இரவு 8:30 (ஞாயிறு முன்பதிவு)">Mon - Sat: 9:00 AM - 8:30 PM (Sun By Appt)</span>
+        </div>
+      </div>
+      <div class="top-bar-right">
+        <div class="top-info-item">
+          <i class="fa-solid fa-phone-volume"></i>
+          <a href="tel:+919688418786">+91 96884 18786</a>
+        </div>
+        <div class="top-info-item">
+          <i class="fa-brands fa-whatsapp text-emerald"></i>
+          <a href="https://wa.me/919688418786" target="_blank">WhatsApp Chat</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Main Navigation Header -->
   <header class="main-navbar" id="navbar">
     <div class="container nav-container">
       <a href="#home" class="brand-logo-link">
         <div class="brand-symbol">
-          <i class="lucide-sparkles"></i>
+          <i class="fa-solid fa-staff-snake"></i>
         </div>
         <div class="brand-text-block">
           <span class="brand-title" data-en="Nisha Clinic" data-ta="நிஷா கிளினிக்">Nisha Clinic</span>
@@ -62,32 +88,31 @@
       <div class="nav-actions">
         <!-- Language Switcher -->
         <button class="lang-btn" id="lang-toggle-btn" title="Toggle Language (தமிழ் / English)">
-          <i class="lucide-languages"></i>
+          <i class="fa-solid fa-language"></i>
           <span class="lang-label">தமிழ்</span>
         </button>
 
         <!-- Dark / Light Theme -->
-        <button class="icon-circle-btn" id="theme-toggle-btn" title="Toggle Dark/Light Mode">
-          <i class="lucide-sun"></i>
+        <button class="icon-circle-btn" id="theme-toggle-btn" title="Toggle Light/Dark Theme">
+          <i class="fa-solid fa-moon text-primary"></i>
         </button>
 
         <!-- Quick Book CTA -->
         <button class="btn btn-primary btn-sm" data-action="book">
-          <i class="lucide-calendar-plus"></i>
+          <i class="fa-solid fa-calendar-check"></i>
           <span data-en="Book Slot" data-ta="முன்பதிவு">Book Slot</span>
         </button>
 
         <!-- Mobile Menu Toggle -->
         <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Toggle Mobile Navigation">
-          <i class="lucide-menu"></i>
+          <i class="fa-solid fa-bars"></i>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- 2. Hero Section -->
+  <!-- 3. Hero Section -->
   <section class="hero-section" id="home">
-    <div class="hero-backdrop-glow"></div>
     <div class="container hero-grid">
       <div class="hero-content">
         <!-- Live Operating Status -->
@@ -101,27 +126,27 @@
         </h1>
 
         <div class="hero-location-chip">
-          <i class="lucide-map-pin text-gold"></i>
+          <i class="fa-solid fa-location-dot text-primary"></i>
           <span data-en="EB Colony Main Road, SS Colony / Arasaradi, Madurai - 625014" data-ta="இபி காலனி மெயின் ரோடு, எஸ்.எஸ் காலனி / அரசரடி, மதுரை - 625014">EB Colony Main Road, SS Colony / Arasaradi, Madurai - 625014</span>
         </div>
 
-        <p class="hero-description" data-en="Experience profound natural pain relief, nerve restoration, and whole-body medical detoxification under certified clinical supervision. 100% single-use sterile protocols with dedicated privacy." data-ta="சான்றளிக்கப்பட்ட மருத்துவ மேற்பார்வையில் நரம்பு மண்டல புத்துணர்ச்சி, நாள்பட்ட வலி நிவாரணம் மற்றும் முழு உடல் நச்சு நீக்க சிகிச்சை. 100% ஒருமுறை பயன்படுத்தும் மருத்துவ கப்கள் மற்றும் தனி நபர் பாதுகாப்பு.">
-          Experience profound natural pain relief, nerve restoration, and whole-body medical detoxification under certified clinical supervision. 100% single-use sterile protocols with dedicated privacy.
+        <p class="hero-description" data-en="Experience profound natural pain relief, nerve restoration, and whole-body medical detoxification under certified clinical supervision. 100% single-use sterile protocols with dedicated privacy for men and women." data-ta="சான்றளிக்கப்பட்ட மருத்துவ மேற்பார்வையில் நரம்பு மண்டல புத்துணர்ச்சி, நாள்பட்ட வலி நிவாரணம் மற்றும் முழு உடல் நச்சு நீக்க சிகிச்சை. 100% ஒருமுறை பயன்படுத்தும் மருத்துவ கப்கள் மற்றும் தனி நபர் பாதுகாப்பு.">
+          Experience profound natural pain relief, nerve restoration, and whole-body medical detoxification under certified clinical supervision. 100% single-use sterile protocols with dedicated privacy for men and women.
         </p>
 
         <div class="hero-actions-row">
           <button class="btn btn-primary" data-action="book">
-            <i class="lucide-calendar-check-2"></i>
+            <i class="fa-solid fa-calendar-plus"></i>
             <span data-en="Book Appointment Online" data-ta="ஆன்லைன் முன்பதிவு செய்க">Book Appointment Online</span>
           </button>
           
-          <a href="https://wa.me/919688418786?text=Hello%20Dr.%20Nisha,%20I%20would%20like%20to%20consult%20for%20Acupuncture%20/%20Hijama%20treatment." target="_blank" class="btn btn-whatsapp-sync">
-            <i class="lucide-message-circle"></i>
+          <a href="https://wa.me/919688418786?text=Hello%20Dr.%20Nisha,%20I%20would%20like%20to%20consult%20for%20Acupuncture%20/%20Hijama%20treatment." target="_blank" class="btn btn-whatsapp">
+            <i class="fa-brands fa-whatsapp" style="font-size: 1.25rem;"></i>
             <span data-en="WhatsApp Consultation" data-ta="வாட்ஸ்அப் ஆலோசனை">WhatsApp Consultation</span>
           </a>
 
-          <a href="tel:+919688418786" class="btn btn-outline">
-            <i class="lucide-phone-call"></i>
+          <a href="tel:+919688418786" class="btn btn-outline-primary">
+            <i class="fa-solid fa-phone"></i>
             <span>+91 96884 18786</span>
           </a>
         </div>
@@ -152,7 +177,7 @@
         <img src="assets/images/hero_clinic_serene.jpg" alt="Nisha Acupuncture & Hijama Clinic Treatment Sanctuary in Madurai" class="hero-main-img">
         <div class="hero-floating-badge">
           <div class="badge-icon">
-            <i class="lucide-shield-check"></i>
+            <i class="fa-solid fa-award"></i>
           </div>
           <div class="badge-meta">
             <strong data-en="Certified Medical Hijama & TCM" data-ta="சான்றளிக்கப்பட்ட மருத்துவ ஹிஜாமா & TCM">Certified Medical Hijama & TCM</strong>
@@ -163,12 +188,12 @@
     </div>
   </section>
 
-  <!-- 3. Interactive Meridian & Body Symptom Explorer Section -->
-  <section class="section" id="meridian-explorer">
+  <!-- 4. Interactive Meridian & Body Symptom Explorer Section -->
+  <section class="section section-bg-alt" id="meridian-explorer">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">
-          <i class="lucide-activity"></i>
+          <i class="fa-solid fa-heart-pulse"></i>
           <span data-en="Interactive Diagnostic Tool" data-ta="நேரலை நோய் கண்டறிதல் கருவி">Interactive Diagnostic Tool</span>
         </span>
         <h2 class="section-title" data-en="Explore Your Pain Points & Meridian Channels" data-ta="உங்கள் வலி மற்றும் அக்குபஞ்சர் ஆற்றல் புள்ளிகளை அறிக">
@@ -184,12 +209,12 @@
     </div>
   </section>
 
-  <!-- 4. Treatments & Therapies Showcase -->
+  <!-- 5. Treatments & Therapies Showcase -->
   <section class="section" id="treatments">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">
-          <i class="lucide-sparkles"></i>
+        <span class="section-tag tag-gold">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
           <span data-en="Holistic Clinical Services" data-ta="சிறப்பு மருத்துவ சிகிச்சைகள்">Holistic Clinical Services</span>
         </span>
         <h2 class="section-title" data-en="Specialized Holistic Therapies" data-ta="எங்களின் சிறப்பு இயற்கை சிகிச்சைகள்">
@@ -205,15 +230,15 @@
     </div>
   </section>
 
-  <!-- 5. Sunnah Hijama Calendar Section -->
-  <section class="section" id="sunnah-calendar-section">
+  <!-- 6. Sunnah Hijama Calendar Section -->
+  <section class="section section-bg-alt" id="sunnah-calendar-section">
     <div class="container">
       <!-- Injected by js/sunnah-calendar.js -->
       <div id="sunnah-calendar-container"></div>
     </div>
   </section>
 
-  <!-- 6. Doctor & Specialist Profile Section -->
+  <!-- 7. Doctor & Specialist Profile Section -->
   <section class="section" id="doctor">
     <div class="container">
       <div class="doctor-section-grid">
@@ -227,12 +252,12 @@
     </div>
   </section>
 
-  <!-- 7. Hygiene & Safety Standards Visualizer -->
-  <section class="section" id="hygiene">
+  <!-- 8. Hygiene & Safety Standards Visualizer -->
+  <section class="section section-bg-alt" id="hygiene">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">
-          <i class="lucide-shield-check"></i>
+          <i class="fa-solid fa-shield-halved"></i>
           <span data-en="Hospital-Grade Sterilization" data-ta="மருத்துவமனை தர தூய்மை">Hospital-Grade Sterilization</span>
         </span>
         <h2 class="section-title" data-en="Our 100% Sterile Safety Guarantee" data-ta="எங்களின் 100% மலட்டு பாதுகாப்பு உறுதி">
@@ -249,12 +274,12 @@
     </div>
   </section>
 
-  <!-- 8. Pricing & Packages Section -->
+  <!-- 9. Pricing & Packages Section -->
   <section class="section" id="pricing">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">
-          <i class="lucide-tag"></i>
+        <span class="section-tag tag-gold">
+          <i class="fa-solid fa-tags"></i>
           <span data-en="Transparent Care Plans" data-ta="வெளிப்படையான கட்டணங்கள்">Transparent Care Plans</span>
         </span>
         <h2 class="section-title" data-en="Affordable Treatment Packages" data-ta="மலிவு விலை சிகிச்சை தொகுப்புகள்">
@@ -271,12 +296,12 @@
     </div>
   </section>
 
-  <!-- 9. Testimonials & Patient Reviews -->
-  <section class="section" id="reviews">
+  <!-- 10. Testimonials & Patient Reviews -->
+  <section class="section section-bg-alt" id="reviews">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">
-          <i class="lucide-star"></i>
+          <i class="fa-solid fa-star"></i>
           <span data-en="Patient Recovery Stories" data-ta="நோயாளிகளின் நற்சான்றுகள்">Patient Recovery Stories</span>
         </span>
         <h2 class="section-title" data-en="Real Healing Journeys in Madurai" data-ta="மதுரை மக்களின் உண்மையான நல்வாழ்வு அனுபவங்கள்">
@@ -291,8 +316,8 @@
         <!-- Injected by js/app.js -->
       </div>
 
-      <!-- Submit Review Interactive Card -->
-      <div class="submit-review-card glass-panel">
+      <!-- Submit Review Card -->
+      <div class="submit-review-card">
         <h3 data-en="Share Your Recovery Experience" data-ta="உங்கள் சிகிச்சை அனுபவத்தை பகிருங்கள்">Share Your Recovery Experience</h3>
         <p data-en="Help other patients in Madurai discover natural non-surgical healing." data-ta="மதுரையில் உள்ள பிற நோயாளிகளுக்கு இயற்கை மருத்துவ வழிகாட்ட உதவுங்கள்.">Help other patients in Madurai discover natural non-surgical healing.</p>
         
@@ -312,23 +337,23 @@
             </div>
           </div>
           <button type="submit" class="btn btn-primary btn-block">
-            <i class="lucide-send"></i>
+            <i class="fa-solid fa-paper-plane"></i>
             <span data-en="Submit Verified Review" data-ta="கருத்தை பதிவிடுக">Submit Verified Review</span>
           </button>
         </form>
-        <div id="review-success-msg" style="display:none; color: var(--color-emerald); text-align: center; margin-top: 1rem; font-weight: 600;">
+        <div id="review-success-msg" style="display:none; color: var(--color-accent-emerald); text-align: center; margin-top: 1rem; font-weight: 700;">
           ✓ Thank you! Your review has been added to our community board.
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 10. Frequently Asked Questions (FAQ) -->
+  <!-- 11. Frequently Asked Questions (FAQ) -->
   <section class="section" id="faqs">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">
-          <i class="lucide-help-circle"></i>
+        <span class="section-tag tag-gold">
+          <i class="fa-solid fa-circle-question"></i>
           <span data-en="Clear Answers" data-ta="அடிக்கடி கேட்கப்படும் கேள்விகள்">Clear Answers</span>
         </span>
         <h2 class="section-title" data-en="Frequently Asked Questions" data-ta="அடிக்கடி கேட்கப்படும் கேள்விகள் & விளக்கங்கள்">
@@ -345,12 +370,12 @@
     </div>
   </section>
 
-  <!-- 11. Location, Directions & Contact Hub -->
-  <section class="section" id="contact">
+  <!-- 12. Location, Directions & Contact Hub -->
+  <section class="section section-bg-alt" id="contact">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">
-          <i class="lucide-map-pin"></i>
+          <i class="fa-solid fa-location-dot"></i>
           <span data-en="Visit Us in Madurai" data-ta="மதுரை கிளினிக் முகவரி">Visit Us in Madurai</span>
         </span>
         <h2 class="section-title" data-en="Find & Contact Nisha Clinic" data-ta="கிளினிக் இருப்பிடம் & தொடர்பு எண்கள்">
@@ -363,12 +388,12 @@
 
       <div class="location-contact-grid">
         <!-- Info Card -->
-        <div class="location-info-card glass-panel">
+        <div class="location-info-card">
           <h3 data-en="Clinic Address & Timings" data-ta="கிளினிக் முகவரி & நேரம்">Clinic Address & Timings</h3>
           
           <div class="location-detail-list">
             <div class="loc-item">
-              <div class="loc-icon"><i class="lucide-map-pin"></i></div>
+              <div class="loc-icon"><i class="fa-solid fa-location-dot"></i></div>
               <div class="loc-text">
                 <strong data-en="Address:" data-ta="முகவரி:">Address:</strong>
                 <p data-en="EB Colony Main Road, SS Colony / Arasaradi / Iyer Bungalow Area, Madurai - 625014, Tamil Nadu" data-ta="இபி காலனி மெயின் ரோடு, எஸ்.எஸ் காலனி / அரசரடி / ஐயர் பங்களா, மதுரை - 625014, தமிழ்நாடு">
@@ -378,15 +403,15 @@
             </div>
 
             <div class="loc-item">
-              <div class="loc-icon"><i class="lucide-phone"></i></div>
+              <div class="loc-icon"><i class="fa-solid fa-phone"></i></div>
               <div class="loc-text">
                 <strong data-en="Direct Consultation & Appointment Phone:" data-ta="நேரடி முன்பதிவு & அவசர எண்:">Direct Phone:</strong>
-                <p><a href="tel:+919688418786" class="text-gold font-bold" style="font-size: 1.15rem;">+91 96884 18786</a></p>
+                <p><a href="tel:+919688418786" class="text-primary font-bold" style="font-size: 1.2rem;">+91 96884 18786</a></p>
               </div>
             </div>
 
             <div class="loc-item">
-              <div class="loc-icon"><i class="lucide-clock"></i></div>
+              <div class="loc-icon"><i class="fa-solid fa-clock"></i></div>
               <div class="loc-text">
                 <strong data-en="Operating Hours:" data-ta="இயங்கும் நேரம்:">Operating Hours:</strong>
                 <table class="hours-table">
@@ -398,7 +423,7 @@
             </div>
 
             <div class="loc-item">
-              <div class="loc-icon"><i class="lucide-navigation"></i></div>
+              <div class="loc-icon"><i class="fa-solid fa-route"></i></div>
               <div class="loc-text">
                 <strong data-en="Key Landmarks:" data-ta="முக்கிய அடையாளங்கள்:">Key Landmarks:</strong>
                 <p data-en="EB Colony Arch, 5 mins from SS Colony 1st St & Arasaradi Police Station Road." data-ta="இபி காலனி ஆர்ச், எஸ்.எஸ் காலனி 1-வது தெரு மற்றும் அரசரடி காவல் நிலையம் அருகில்.">
@@ -410,11 +435,11 @@
 
           <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
             <a href="https://maps.google.com/?q=SS+Colony+Arasaradi+EB+Colony+Madurai+Tamil+Nadu+625014" target="_blank" class="btn btn-primary">
-              <i class="lucide-external-link"></i>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
               <span data-en="Get Google Maps Directions" data-ta="கூகிள் மேப் வழித்தடம்">Get Google Maps Directions</span>
             </a>
-            <a href="tel:+919688418786" class="btn btn-outline">
-              <i class="lucide-phone-call"></i>
+            <a href="tel:+919688418786" class="btn btn-outline-primary">
+              <i class="fa-solid fa-phone"></i>
               <span data-en="Call Clinic Now" data-ta="உடனே அழைக்க">Call Clinic Now</span>
             </a>
           </div>
@@ -432,25 +457,25 @@
     </div>
   </section>
 
-  <!-- 12. Footer -->
+  <!-- 13. Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
           <div class="brand-logo-link" style="margin-bottom: 1rem;">
-            <div class="brand-symbol"><i class="lucide-sparkles"></i></div>
+            <div class="brand-symbol"><i class="fa-solid fa-staff-snake"></i></div>
             <div class="brand-text-block">
-              <span class="brand-title">Nisha Clinic</span>
-              <span class="brand-subtitle">Acupuncture & Hijama</span>
+              <span class="brand-title" style="color: #ffffff;">Nisha Clinic</span>
+              <span class="brand-subtitle" style="color: #facc15;">Acupuncture & Hijama</span>
             </div>
           </div>
-          <p style="margin-bottom: 1.25rem; font-size: 0.88rem;">
+          <p style="margin-bottom: 1.25rem; font-size: 0.9rem;">
             Premier holistic health, classical acupuncture, and clinical cupping therapy center serving Madurai and South Tamil Nadu.
           </p>
           <div style="display: flex; gap: 0.75rem;">
-            <a href="https://wa.me/919688418786" target="_blank" class="icon-circle-btn"><i class="lucide-message-circle"></i></a>
-            <a href="tel:+919688418786" class="icon-circle-btn"><i class="lucide-phone"></i></a>
-            <a href="#contact" class="icon-circle-btn"><i class="lucide-map-pin"></i></a>
+            <a href="https://wa.me/919688418786" target="_blank" class="icon-circle-btn" style="background: rgba(255,255,255,0.1); color: #ffffff;"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="tel:+919688418786" class="icon-circle-btn" style="background: rgba(255,255,255,0.1); color: #ffffff;"><i class="fa-solid fa-phone"></i></a>
+            <a href="#contact" class="icon-circle-btn" style="background: rgba(255,255,255,0.1); color: #ffffff;"><i class="fa-solid fa-location-dot"></i></a>
           </div>
         </div>
 
@@ -478,10 +503,10 @@
 
         <div class="footer-col">
           <h4 data-en="Direct Helpline" data-ta="நேரடி உதவி எண்">Direct Helpline</h4>
-          <p style="margin-bottom: 0.5rem;"><strong class="text-gold" style="font-size: 1.15rem;">+91 96884 18786</strong></p>
-          <p style="font-size: 0.85rem; margin-bottom: 1rem;">EB Colony Main Road, SS Colony / Arasaradi, Madurai - 625014</p>
-          <button class="btn btn-primary btn-sm btn-block" data-action="book">
-            <i class="lucide-calendar-plus"></i> <span data-en="Book Appointment" data-ta="முன்பதிவு">Book Appointment</span>
+          <p style="margin-bottom: 0.5rem;"><strong style="font-size: 1.25rem; color: #facc15;">+91 96884 18786</strong></p>
+          <p style="font-size: 0.88rem; margin-bottom: 1.2rem;">EB Colony Main Road, SS Colony / Arasaradi, Madurai - 625014</p>
+          <button class="btn btn-gold btn-sm btn-block" data-action="book">
+            <i class="fa-solid fa-calendar-plus"></i> <span data-en="Book Appointment" data-ta="முன்பதிவு">Book Appointment</span>
           </button>
         </div>
       </div>
@@ -493,22 +518,22 @@
     </div>
   </footer>
 
-  <!-- 13. Floating Action Speed Dial -->
+  <!-- 14. Floating Speed Dial -->
   <div class="floating-action-bar">
     <a href="https://wa.me/919688418786?text=Hello%20Dr.%20Nisha,%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" class="float-btn float-whatsapp" title="Chat on WhatsApp (+91 96884 18786)">
-      <i class="lucide-message-circle"></i>
+      <i class="fa-brands fa-whatsapp"></i>
     </a>
     <a href="tel:+919688418786" class="float-btn float-call" title="Direct Phone Call">
-      <i class="lucide-phone-call"></i>
+      <i class="fa-solid fa-phone"></i>
     </a>
   </div>
 
-  <!-- 14. Smart Multi-Step Appointment Booking Modal -->
+  <!-- 15. Smart Multi-Step Appointment Booking Modal -->
   <div class="modal-backdrop" id="booking-modal">
     <div class="modal-dialog">
       <div class="modal-header">
         <h3>
-          <i class="lucide-calendar-heart text-gold"></i>
+          <i class="fa-solid fa-calendar-check text-primary"></i>
           <span data-en="Book Clinic Appointment" data-ta="கிளினிக் அப்பாயிண்ட்மென்ட் முன்பதிவு">Book Clinic Appointment</span>
         </h3>
         <button class="modal-close-icon close-modal-btn" aria-label="Close modal">&times;</button>

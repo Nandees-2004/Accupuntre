@@ -14,22 +14,11 @@ class SunnahCalendar {
     this.render();
   }
 
-  // Generates realistic upcoming Sunnah dates based on current month
   getUpcomingSunnahDates() {
     const now = new Date();
     const currentYear = now.getFullYear();
-    const currentMonth = now.getMonth(); // 0-indexed
+    const currentMonth = now.getMonth();
 
-    // Calculate approximate upcoming lunar 17th, 19th, 21st windows
-    const dates = [];
-    const baseDate = new Date(currentYear, currentMonth, 15);
-    
-    // Day 17
-    const day17 = new Date(currentYear, currentMonth, 17);
-    const day19 = new Date(currentYear, currentMonth, 19);
-    const day21 = new Date(currentYear, currentMonth, 21);
-
-    // If current date is past the 21st, project next month's sunnah days
     let targetMonthOffset = 0;
     if (now.getDate() > 21) {
       targetMonthOffset = 1;
@@ -48,7 +37,7 @@ class SunnahCalendar {
         dayNameTa: this.getTamilDay(mDate17.getDay()),
         formattedDate: mDate17.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
         status: mDate17 >= now ? 'upcoming' : 'completed',
-        isBestDay: [1, 2, 4].includes(mDate17.getDay()) // Mon, Tue, Thu
+        isBestDay: [1, 2, 4].includes(mDate17.getDay())
       },
       {
         hijriDay: 19,
@@ -83,15 +72,14 @@ class SunnahCalendar {
     const sunnahDays = this.getUpcomingSunnahDates();
     const nextUpcoming = sunnahDays.find(d => d.status === 'upcoming') || sunnahDays[0];
 
-    // Calculate days remaining
     const diffTime = Math.max(0, nextUpcoming.gregorianDate.getTime() - new Date().getTime());
     const daysRemaining = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
     this.container.innerHTML = `
-      <div class="sunnah-calendar-card glass-panel">
+      <div class="sunnah-calendar-card">
         <div class="sunnah-top-banner">
           <div class="banner-left">
-            <span class="crescent-badge"><i class="lucide-moon"></i> ${isTa ? 'நபிவழி சுன்னத் ஹிஜாமா காலண்டர்' : 'Sunnah Lunar Hijama Calendar'}</span>
+            <span class="crescent-badge"><i class="fa-solid fa-moon"></i> ${isTa ? 'நபிவழி சுன்னத் ஹிஜாமா காலண்டர்' : 'Sunnah Lunar Hijama Calendar'}</span>
             <h3 class="sunnah-title">${isTa ? 'வரவிருக்கும் சுன்னத் ஹிஜாமா தினங்கள்' : 'Recommended Prophetic Sunnah Days (17, 19, 21)'}</h3>
             <p class="sunnah-subtitle">
               ${isTa ? 
@@ -111,17 +99,17 @@ class SunnahCalendar {
         <div class="sunnah-cards-grid">
           ${sunnahDays.map(day => `
             <div class="sunnah-day-box ${day.isBestDay ? 'prime-day' : ''} ${day.status === 'upcoming' ? 'active-slot' : ''}">
-              ${day.isBestDay ? `<span class="prime-tag"><i class="lucide-star"></i> ${isTa ? 'மிகச்சிறந்த நாள்' : 'Highly Recommended'}</span>` : ''}
+              ${day.isBestDay ? `<span class="prime-tag"><i class="fa-solid fa-star"></i> ${isTa ? 'மிகச்சிறந்த நாள்' : 'Highly Recommended'}</span>` : ''}
               <div class="hijri-day-pill">${day.hijriLabel}</div>
               <div class="sunnah-greg-date">${day.formattedDate}</div>
-              <div class="sunnah-day-name"><i class="lucide-calendar"></i> ${isTa ? day.dayNameTa : day.dayName}</div>
+              <div class="sunnah-day-name"><i class="fa-solid fa-calendar-day text-primary"></i> ${isTa ? day.dayNameTa : day.dayName}</div>
               
               <div class="sunnah-benefits-mini">
-                <small><i class="lucide-shield-check"></i> ${isTa ? 'முழு உடல் நச்சு நீக்கம் & தூய்மை' : 'Capillary Detox & Immunity'}</small>
+                <small><i class="fa-solid fa-shield-halved text-emerald"></i> ${isTa ? 'முழு உடல் நச்சு நீக்கம் & தூய்மை' : 'Capillary Detox & Immunity'}</small>
               </div>
 
-              <button class="btn btn-sm btn-outline-gold book-sunnah-btn" data-date="${day.formattedDate}" data-hijri="${day.hijriLabel}">
-                <i class="lucide-check-circle"></i>
+              <button class="btn btn-sm btn-outline-primary book-sunnah-btn" data-date="${day.formattedDate}" data-hijri="${day.hijriLabel}">
+                <i class="fa-solid fa-circle-check"></i>
                 <span>${isTa ? 'இந்த நாளில் புக் செய்க' : 'Reserve Sunnah Slot'}</span>
               </button>
             </div>
@@ -130,11 +118,11 @@ class SunnahCalendar {
 
         <div class="sunnah-fasting-guide">
           <div class="guide-col">
-            <strong><i class="lucide-clock"></i> ${isTa ? 'முன் தயாரிப்பு:' : 'Pre-Hijama Care:'}</strong>
+            <strong><i class="fa-solid fa-clock"></i> ${isTa ? 'முன் தயாரிப்பு:' : 'Pre-Hijama Care:'}</strong>
             <span>${isTa ? 'சிகிச்சைக்கு முன் 2-3 மணி நேரம் லேசான விரதம் (நீர் அல்லது தேன் அருந்தலாம்).' : 'Fast from heavy food 2-3 hours prior. Hydrate well with water or honey.'}</span>
           </div>
           <div class="guide-col">
-            <strong><i class="lucide-heart-pulse"></i> ${isTa ? 'பெண்களுக்கு தனியுரிமை:' : 'Privacy Assurance:'}</strong>
+            <strong><i class="fa-solid fa-heart-pulse"></i> ${isTa ? 'பெண்களுக்கு தனியுரிமை:' : 'Privacy Assurance:'}</strong>
             <span>${isTa ? 'பெண்களுக்கு தனி சிகிச்சை அறை மற்றும் பெண் உதவியாளர்கள் வசதி உண்டு.' : 'Dedicated private female treatment rooms with certified female therapists.'}</span>
           </div>
         </div>
@@ -153,10 +141,6 @@ class SunnahCalendar {
         }
       });
     });
-
-    if (window.lucide) {
-      window.lucide.createIcons();
-    }
   }
 }
 
